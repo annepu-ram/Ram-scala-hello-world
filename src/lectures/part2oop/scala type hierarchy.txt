@@ -1,0 +1,20 @@
+
+                                    The parent data type is
+                                         scala.Any        //all data types are derived from this type
+                                            /\
+                                           /  \
+                                          /    \
+                                         /      \
+                               scala.AnyVal      scala.AnyRef
+     Primitive data types extend AnyVal                 it maps to java.lang.Object class
+     ex: Int, Boolean, Float, Unit                      all classes which do/do not have any parent class automatically extends
+     We rarely extend this class,                       AnyRef
+     mostly for memory optimisations                    example String, List, Set, user defined such as animal, person everything
+
+                                                        ---scala.Null is derived from all the above sub classes of AnyRef
+                                                        its only instance is Null reference
+                                                        so any class can be replaced by Null reference
+
+                            ---scala.Nothing is derived from all these classes (Both AnyVal and AnyRef)
+                            nothing is a child class of all predefined and newly defined classes in scala
+                            nothing means no defined instance at all

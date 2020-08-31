@@ -1,0 +1,49 @@
+scala has both mutable and immutable collections
+
+by default we use immutable collections, when we define a List
+
+immutable collections are found in scala.collections.immutable
+                                Traversable
+    HashSet   ---------              |                     ----------- HashMap
+                        \            |                   /
+                       Set---- > Iterable(trait)  <---- Map
+                        /            |                   \
+    SortedSet ---------              |                     ----------- SortedMap
+                                    Seq
+                                   /   \
+                                  /     \
+         IndexedSeq   -----------         ----------- LinearSeq
+         /   |    \                                  /   |   \   \
+    Vector   |     Range                          List   |  Stack \
+             |                                         Stream     Queue
+           String
+
+
+
+     Sets - doesn't not contain duplicates
+     IndexSeq - can be quickly accessed - elements can be accessed in constant time
+     LinearSeq - only guarantee some form of contract like LIFO FIFO
+
+immutable collections are found in scala.collections.mutable
+                                Traversable
+    HashSet   ---------              |                     ----------- HashMap
+                        \            |                   /
+                       Set---- > Iterable(trait)  <---- Map
+                        /            |                   \
+LinkedHashSet ---------              |                     ----------- MultiMap
+                                    Seq
+                                   / |  \
+                                  /  |   \
+         IndexedSeq   -----------    |     ----------------  LinearSeq
+         /       \                 Buffer                      /      \
+StringBuilder     ArrayBuffer -------'                   LinkedList   MutableList
+
+Traversable is the base trait for all of collections and it offers many methods
+````````````````````````````````````````````````````````````````````````````````
+Maps : map, flatMap, collect
+Conversions : toArray, toList, toSeq (convert between types of collections)
+Size info : isEmpty, size, nonEmpty
+tests : exists, forall
+folds : foldLeft, foldRight, reduceLeft, reduceRight
+retrieval : head, find, tail
+string ops : mkString (for pretty printing)
